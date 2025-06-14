@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Data
+data/*
+!data/raw/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# OS/Platform
+.DS_Store
+Thumbs.db
+
+# Git line ending settings
+*.csv text eol=lf
+*.txt text eol=lf
+*.ipynb text eol=lf
+*.md text eol=lf
