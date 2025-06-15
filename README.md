@@ -2,11 +2,11 @@
 
 End-to-end insurance analytics project for AlphaCare Insurance Solutions (ACIS).
 
-This project analyzes historical auto insurance data to identify low-risk segments and optimize premiums using machine learning.
+This project analyzes historical auto insurance data to identify low-risk segments and optimize premiums using machine learning. It includes data versioning, testing, CI/CD automation, and reproducible pipelines.
 
 ---
 
-## 🔧 Setup
+##  Setup
 
 ```bash
 # Clone repo
@@ -23,50 +23,74 @@ pip install -r requirements.txt
 
 ---
 
-## 📁 Structure
+##  Structure
 
 ```
-├── src/               # Core modules
+├── src/               # Core modules (__init__.py, utils.py, etc.)
 ├── scripts/           # Entry-point scripts
-├── notebooks/         # Jupyter notebooks for analysis
-├── tests/             # Pytest unit tests
-├── data/raw/          # Input data (not tracked by Git)
-├── .github/workflows/ # CI/CD configs
+├── notebooks/         # Jupyter notebooks for EDA and modeling
+├── tests/             # Pytest unit tests (e.g. test_dummy.py)
+├── data/raw/          # Input data (versioned with DVC)
+├── dvcstore/          # Local DVC remote storage
+├── .github/workflows/ # CI/CD GitHub Actions
 ├── .vscode/           # VS Code settings
-├── .gitignore         
-├── README.md          
-├── requirements.txt   
+├── .dvc/              # DVC config and state
+├── .gitignore         # Git ignore file
+├── requirements.txt   # Project dependencies
+├── README.md          # Project overview
 ```
 
 ---
 
-## 🚀 Usage
+##  Progress
 
-Work inside branches:
+*  **Task 1**:
 
-```bash
-git checkout -b task-1
-```
+  * Set up GitHub repository and linked remote origin
+  * Created clean project folder structure with modular components
+  * Configured virtual environment and added core dependencies
+  * Added VS Code settings and GitHub Actions for CI/CD
+  * Developed and committed a full EDA notebook (`notebooks/eda_task1.ipynb`) with exploratory insights and visualizations
 
-Run notebooks via:
+*  **Task 2**:
 
-```bash
-cd notebooks
-jupyter notebook
-```
+  * Installed and configured DVC
+  * Added raw dataset using `dvc add` and committed metadata files
+  * Configured a local DVC remote (`dvcstore/`) and pushed data via `dvc push`
+  * All data version control steps committed in `task-2` branch
+
+* **Task 3** (Upcoming): A/B Hypothesis Testing
 
 ---
 
-## 🧪 Testing
+##  Data Version Control (DVC)
+
+* Initialized DVC in the project using `dvc init`
+* Configured local remote storage: `dvc remote add -d localstorage ./dvcstore`
+* Added raw dataset: `data/raw/MachineLearningRating_v3.txt` with `dvc add`
+* Committed DVC metadata files to Git (`.dvc/config`, `.gitignore`, `.dvc` directory)
+* Used `dvc push` to store data in local remote directory for reproducibility
+
+---
+
+##  Testing
 
 Run all tests:
 
 ```bash
 pytest
 ```
+
 ---
 
-## 📌 Author
+##  CI/CD
+
+GitHub Actions runs automated tests on every push and pull request.
+Workflow file: `.github/workflows/Project.yml`
+
+---
+
+##  Author
 
 Hiwot ([@lhiwi](https://github.com/lhiwi))
 10 Academy AI Mastery Program
