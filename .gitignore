@@ -4,24 +4,32 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 
-# Data
+# ----------------------
+# Data (ignore raw files, but allow tracked .dvc files and folder structure)
 data/*
 !data/raw/
+!data/raw/*.txt.dvc
+!data/.gitkeep
+
+# DVC cache store and secrets
 /dvcstore/
 .secrets/
 
-
-# Notebooks
+# ----------------------
+# Jupyter Notebooks
 .ipynb_checkpoints/
 
+# ----------------------
 # VS Code
 .vscode/
 *.code-workspace
 
+# ----------------------
 # OS/Platform
 .DS_Store
 Thumbs.db
 
+# ----------------------
 # Git line ending settings
 *.csv text eol=lf
 *.txt text eol=lf
