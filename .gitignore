@@ -4,11 +4,25 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 
-# Data
+# DVC - prevent storing large files locally or uploading service credentials
+.dvc/
+.dvc/tmp/
+.dvc/cache/
+.dvc/config.local
+.dvc/plots/
+.dvc/lock
+*.dvc
+
+# Secrets and credentials
+.secrets/
+!data/raw/
+
+# Data files
 data/*
 !data/raw/
-/dvcstore/
 
+# DVC store (if you previously used it locally)
+dvcstore/
 
 # Notebooks
 .ipynb_checkpoints/
@@ -21,7 +35,7 @@ data/*
 .DS_Store
 Thumbs.db
 
-# Git line ending settings
+# Git line endings
 *.csv text eol=lf
 *.txt text eol=lf
 *.ipynb text eol=lf
