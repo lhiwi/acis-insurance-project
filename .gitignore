@@ -7,6 +7,8 @@ __pycache__/
 # Data
 data/*
 !data/raw/
+/dvcstore/
+
 
 # Notebooks
 .ipynb_checkpoints/
