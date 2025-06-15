@@ -2,7 +2,7 @@
 
 End-to-end insurance analytics project for AlphaCare Insurance Solutions (ACIS).
 
-This project analyzes historical auto insurance data to identify low-risk segments and optimize premiums using machine learning.
+This project analyzes historical auto insurance data to identify low-risk segments and optimize premiums using machine learning. It includes data versioning, testing, CI/CD automation, and reproducible pipelines.
 
 ---
 
@@ -23,50 +23,51 @@ pip install -r requirements.txt
 
 ---
 
-## 📁 Structure
+##  Structure
 
 ```
-├── src/               # Core modules
+├── src/               # Core modules (__init__.py, utils.py, etc.)
 ├── scripts/           # Entry-point scripts
-├── notebooks/         # Jupyter notebooks for analysis
-├── tests/             # Pytest unit tests
-├── data/raw/          # Input data (not tracked by Git)
-├── .github/workflows/ # CI/CD configs
+├── notebooks/         # Jupyter notebooks for EDA and modeling
+├── tests/             # Pytest unit tests (e.g. test_dummy.py)
+├── data/raw/          # Input data (versioned with DVC)
+├── dvcstore/          # Local DVC remote storage
+├── .github/workflows/ # CI/CD GitHub Actions
 ├── .vscode/           # VS Code settings
-├── .gitignore         
-├── README.md          
-├── requirements.txt   
+├── .dvc/              # DVC config and state
+├── .gitignore         # Git ignore file
+├── requirements.txt   # Project dependencies
+├── README.md          # Project overview
 ```
 
 ---
 
-## 🚀 Usage
+##  Progress
 
-Work inside branches:
-
-```bash
-git checkout -b task-1
-```
-
-Run notebooks via:
-
-```bash
-cd notebooks
-jupyter notebook
-```
+*  Task 1: Git setup, project scaffold, EDA notebook (`eda_task1.ipynb`)
+*  Task 2: Initialized DVC, configured local remote, tracked dataset
+*  Task 3: A/B Hypothesis Testing (next)
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 Run all tests:
 
 ```bash
 pytest
 ```
+
 ---
 
-## 📌 Author
+##  CI/CD
+
+GitHub Actions runs automated tests on every push and pull request.
+Workflow file: `.github/workflows/Project.yml`
+
+---
+
+##  Author
 
 Hiwot ([@lhiwi](https://github.com/lhiwi))
 10 Academy AI Mastery Program
