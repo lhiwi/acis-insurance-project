@@ -84,7 +84,7 @@ pytest
 
 ---
 
-## CI/CD
+##  CI/CD
 
 GitHub Actions runs automated tests on every push and pull request.
 Workflow file: `.github/workflows/Project.yml`

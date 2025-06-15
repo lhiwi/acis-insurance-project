@@ -15,16 +15,17 @@ __pycache__/
 
 # Secrets and credentials
 .secrets/
-!data/raw/
 
-# Data files
+# Data files (ignore everything except what DVC needs)
 data/*
 !data/raw/
+!data/raw/*.txt.dvc
+!data/.gitkeep
 
-# DVC store (if you previously used it locally)
+# DVC store (legacy)
 dvcstore/
 
-# Notebooks
+# Jupyter Notebooks
 .ipynb_checkpoints/
 
 # VS Code
