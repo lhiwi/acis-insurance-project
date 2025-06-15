@@ -6,7 +6,7 @@ This project analyzes historical auto insurance data to identify low-risk segmen
 
 ---
 
-## 🔧 Setup
+##  Setup
 
 ```bash
 # Clone repo
@@ -44,9 +44,32 @@ pip install -r requirements.txt
 
 ##  Progress
 
-*  Task 1: Git setup, project scaffold, EDA notebook (`eda_task1.ipynb`)
-*  Task 2: Initialized DVC, configured local remote, tracked dataset
-*  Task 3: A/B Hypothesis Testing (next)
+*  **Task 1**:
+
+  * Set up GitHub repository and linked remote origin
+  * Created clean project folder structure with modular components
+  * Configured virtual environment and added core dependencies
+  * Added VS Code settings and GitHub Actions for CI/CD
+  * Developed and committed a full EDA notebook (`notebooks/eda_task1.ipynb`) with exploratory insights and visualizations
+
+*  **Task 2**:
+
+  * Installed and configured DVC
+  * Added raw dataset using `dvc add` and committed metadata files
+  * Configured a local DVC remote (`dvcstore/`) and pushed data via `dvc push`
+  * All data version control steps committed in `task-2` branch
+
+* **Task 3** (Upcoming): A/B Hypothesis Testing
+
+---
+
+##  Data Version Control (DVC)
+
+* Initialized DVC in the project using `dvc init`
+* Configured local remote storage: `dvc remote add -d localstorage ./dvcstore`
+* Added raw dataset: `data/raw/MachineLearningRating_v3.txt` with `dvc add`
+* Committed DVC metadata files to Git (`.dvc/config`, `.gitignore`, `.dvc` directory)
+* Used `dvc push` to store data in local remote directory for reproducibility
 
 ---
 
