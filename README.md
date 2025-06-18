@@ -46,37 +46,52 @@ pip install -r requirements.txt
 
 *  **Task 1**:
 
-  * Set up GitHub repository and linked remote origin
-  * Created clean project folder structure with modular components
-  * Configured virtual environment and added core dependencies
-  * Added VS Code settings and GitHub Actions for CI/CD
-  * Developed and committed a full EDA notebook (`notebooks/eda_task1.ipynb`) with annotated insights and visualizations
+  * Set up GitHub repository and configured Git versioning
+  * Created clean modular project structure and VS Code workspace
+  * Activated virtual environment and added dependencies
+  * Added CI/CD workflow with GitHub Actions
+  * Performed comprehensive EDA:
+
+    * Investigated distribution of `TotalClaims` and `TotalPremium`
+    * Explored temporal trends by `TransactionMonth`
+    * Analyzed correlation matrix of numeric features
+    * Highlighted key drivers via scatter and line plots
 
 *  **Task 2**:
 
-  * Installed and configured DVC with Google Drive remote
-  * Added raw dataset using `dvc add` and committed pointer files
-  * Configured `gdrive_remote` with service account from `.secrets/`
-  * Successfully pushed data using secure authentication
-  * Updated `.gitignore` to exclude secrets and DVC cache
+  * Installed and initialized DVC
+  * Tracked dataset with DVC using: `dvc add data/raw/MachineLearningRating_v3.txt`
+  * Configured remote storage using Google Drive service account
+  * Authenticated and pushed data using `dvc push`
+  * Updated `.gitignore` to safely exclude large or sensitive data
 
-*  **Task 3** (Upcoming): A/B Hypothesis Testing
+*  **Task 3**: A/B Hypothesis Testing
+
+  * Conducted statistical hypothesis testing on urban vs. rural segments
+  * Analyzed premium margins and loss ratios by ZIP code
+  * Calculated effect sizes and segment-specific risk performance
+
+*  **Task 4**: Predictive Modeling and Premium Optimization
+
+  * Preprocessed mixed data types (dates, categoricals, numericals)
+  * Built classification model (XGBoost + SMOTE) to predict claim occurrence
+  * Developed regression model (XGBoost) to predict claim severity
+  * Applied SHAP for explainability and feature impact interpretation
+  * Trained and evaluated models using metrics: RMSE, R-squared, precision, recall
+  * Saved trained models and preprocessing pipeline using joblib
 
 ---
 
 ##  Data Version Control (DVC)
 
-* Initialized DVC in the project using `dvc init`
-* Configured remote: `dvc remote add -d gdrive_remote gdrive://<folder_id>`
-* Used service account for auth: `.secrets/gdrive-service-account.json`
-* Added raw dataset: `data/raw/MachineLearningRating_v3.txt` with `dvc add`
-* Committed DVC files to Git and pushed data using `dvc push`
+* DVC initialized via `dvc init`
+* Remote configured using Google Drive with service account authentication
+* Secrets securely stored in `.secrets/`
+* DVC metadata committed to Git (excluding large files)
 
 ---
 
 ##  Testing
-
-Run all tests:
 
 ```bash
 pytest
@@ -87,6 +102,7 @@ pytest
 ##  CI/CD
 
 GitHub Actions runs automated tests on every push and pull request.
+
 Workflow file: `.github/workflows/Project.yml`
 
 ---
