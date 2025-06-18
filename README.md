@@ -79,6 +79,8 @@ pip install -r requirements.txt
   * Applied SHAP for explainability and feature impact interpretation
   * Trained and evaluated models using metrics: RMSE, R-squared, precision, recall
   * Saved trained models and preprocessing pipeline using joblib
+ *  **Task 5**: Deployment
+  *The risk-based premium estimator can be deployed as a Streamlit web application. This section explains how to set up and run the deployment.
 
 ---
 
