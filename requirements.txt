@@ -1,7 +1,10 @@
+dvc
 pandas
 matplotlib
 seaborn
 scikit-learn
+xgboost
 jupyter
 pytest
-dvc
+numpy
+joblib
